@@ -9,14 +9,14 @@ const AllProducts = () => {
   const totalPrice= allProducts.map(item => parseInt(item.sub)).reduce((prev, curr) => prev + curr, 0);
  
     useEffect(() => {
-        fetch('http://localhost:5000/all-products')
+        fetch('https://revvings-server-side.vercel.app/all-products')
         .then(res => res.json())
         .then(data =>setAllProducts(data))
       },[allProducts])
       const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to delete?')
         if(proceed){
-            const url = `http://localhost:5000/product/${id}`
+            const url = `https://revvings-server-side.vercel.app/product/${id}`
             fetch(url, {
                 method: 'DELETE',
        

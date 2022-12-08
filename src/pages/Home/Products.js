@@ -7,7 +7,7 @@ const Products = () => {
   const [productQuantity , setProductQuantity] =useState(0)
  
   useEffect(() => {
-    fetch('http://localhost:5000/products')
+    fetch('https://revvings-server-side.vercel.app/products')
     .then(res => res.json())
     .then(data =>setProducts(data))
   },[])
@@ -25,7 +25,7 @@ const singleProduct = (e) => {
 
     // console.log(data)
 if(product){
-  const url = `http://localhost:5000/product`
+  const url = `https://revvings-server-side.vercel.app/product`
   fetch(url,{
       method: 'POST',
       headers: {'content-type' : 'application/json'},
